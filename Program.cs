@@ -20,7 +20,6 @@ namespace PrinterSystem
             var doc2 = new Document("Договор_подряда.docx");
             var doc3 = new Document("Презентация_итоги.pptx");
 
-            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("НАЧАЛЬНЫЕ СОСТОЯНИЯ ДОКУМЕНТОВ:");
             Console.ResetColor();
             doc1.DisplayState();
@@ -45,7 +44,6 @@ namespace PrinterSystem
             doc2.DisplayState();
 
             Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine("Восстановление документа после ошибки...");
             Console.ResetColor();
             dispatcher.ResetDocument(doc2);
@@ -69,7 +67,6 @@ namespace PrinterSystem
             doc3.DisplayState();
 
             Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine("Попытка повторной печати уже напечатанного документа:");
             Console.ResetColor();
             dispatcher.AddDocumentToQueue(doc1);
