@@ -34,7 +34,7 @@ namespace PrinterSystem.Mediator
 
                 case "Enqueued":
                     if (document != null)
-                        _logger.WriteMessage($"📋 Документ '{document.Title}' помещен в очередь.");
+                        _logger.WriteMessage($"Документ '{document.Title}' помещен в очередь.");
                     break;
 
                 case "RequestPrint":
@@ -48,14 +48,14 @@ namespace PrinterSystem.Mediator
                 case "ProcessQueue":
                     if (_queue.IsEmpty)
                     {
-                        _logger.WriteMessage("📭 Очередь пуста.");
+                        _logger.WriteMessage("Очередь пуста.");
                         return;
                     }
                     var nextDoc = _queue.DequeueItem();
                     if (nextDoc != null)
                     {
                         nextDoc.SetMediator(this);
-                        _logger.WriteMessage($"▶️ Начинаем печать документа из очереди: '{nextDoc.Title}'");
+                        _logger.WriteMessage($"Начинаем печать документа из очереди: '{nextDoc.Title}'");
                         nextDoc.Print();
                     }
                     break;
@@ -64,7 +64,7 @@ namespace PrinterSystem.Mediator
                     if (document != null)
                     {
                         document.CompletePrint();
-                        _logger.WriteMessage($"✅ Успешно напечатан документ '{document.Title}'.");
+                        _logger.WriteMessage($"Успешно напечатан документ '{document.Title}'.");
                     }
                     break;
 
@@ -72,7 +72,7 @@ namespace PrinterSystem.Mediator
                     if (document != null)
                     {
                         document.FailPrinting();
-                        _logger.WriteMessage($"❌ ОШИБКА печати документа '{document.Title}'.");
+                        _logger.WriteMessage($"ОШИБКА печати документа '{document.Title}'.");
                     }
                     break;
 
@@ -80,14 +80,14 @@ namespace PrinterSystem.Mediator
                     if (document != null)
                     {
                         document.Reset();
-                        _logger.WriteMessage($"🔄 Документ '{document.Title}' сброшен и может быть отправлен снова.");
+                        _logger.WriteMessage($"Документ '{document.Title}' сброшен и может быть отправлен снова.");
                     }
                     break;
 
                 case "AddToQueueFromDispatcher":
                     if (document != null)
                     {
-                        _logger.WriteMessage($"➕ Диспетчер добавляет документ '{document.Title}' в очередь.");
+                        _logger.WriteMessage($"Диспетчер добавляет документ '{document.Title}' в очередь.");
                         document.AddToQueue();
                     }
                     break;
