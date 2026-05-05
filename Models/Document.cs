@@ -25,7 +25,7 @@ namespace PrinterSystem.Models
         public void DisplayState()
         {
             string stateName = State.GetType().Name.Replace("State", "");
-            Console.WriteLine($"📄 Документ '{Title}' - состояние: {stateName}");
+            Console.WriteLine($"Документ '{Title}' - состояние: {stateName}");
         }
     }
 }
