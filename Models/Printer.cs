@@ -9,7 +9,7 @@ namespace PrinterSystem.Models
 
         public void StartPrint(Document document)
         {
-            Console.WriteLine($"🖨️ [Принтер] Физическая печать документа '{document.Title}'...");
+            Console.WriteLine($"[Принтер] Физическая печать документа '{document.Title}'...");
 
             if (SimulateFailure)
             {
